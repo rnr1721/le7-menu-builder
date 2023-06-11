@@ -136,14 +136,14 @@ interface MenuBuilderInterface
     /**
      * Renders the menu.
      *
-     * @param MenuRendererInterface|null $renderer The menu renderer to use.
-     * If null, the default renderer will be used.
      * @param array|null $options Additional options for rendering the menu.
+     * @param MenuRendererInterface|null $renderer The menu renderer to use. If null, the default renderer will be used.
      * @return mixed The rendered menu.
      */
     public function render(
-            ?MenuRendererInterface $renderer = null,
-            ?array $options = null): mixed;
+            ?array $options = null,
+            ?MenuRendererInterface $renderer = null
+    ): mixed;
 
     /**
      * Returns the options of the menu renderer.

@@ -387,14 +387,14 @@ class MenuBuilder implements MenuBuilderInterface
      */
     protected function importSourceItem(array $menu): void
     {
-        foreach ($menu as $item => $value) {
-            $key = $item;
-            $label = $value['label'] ?? null;
-            $url = $value['url'] ?? null;
-            $parentKey = $value['parentKey'] ?? null;
-            $attributes = $value['attributes'] ?? [];
-            $rels = $value['rels'] ?? [];
-            $weight = $value['weight'] ?? 50;
+        foreach ($menu as $item) {
+            $key = $item['key'];
+            $label = $item['label'] ?? null;
+            $url = $item['url'] ?? null;
+            $parentKey = $item['parentKey'] ?? null;
+            $attributes = $item['attributes'] ?? [];
+            $rels = $item['rels'] ?? [];
+            $weight = $item['weight'] ?? 50;
             if (!$label) {
                 throw new InvalidArgumentException("Menu item label is a required value!");
             }
@@ -466,8 +466,8 @@ class MenuBuilder implements MenuBuilderInterface
      * @inheritdoc
      */
     public function render(
-            ?MenuRendererInterface $renderer = null,
-            ?array $options = null
+            ?array $options = null,
+            ?MenuRendererInterface $renderer = null
     ): mixed
     {
         $cacheKey = $this->cacheKeyPrefix . $this->currentId;

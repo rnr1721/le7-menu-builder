@@ -69,6 +69,9 @@ $menuBuilder->removeLink('services');
 // Render the menu
 $html = $menuBuilder->render();
 
+// Optionally, you can render menu with some options or alternative renderer
+$html = $menuBuilder->render($options, $renderer);
+
 // Build raw menu array
 $menu = $menuBuilder->build();
 ```
@@ -180,7 +183,7 @@ $menuBuilder->addItem('about', 'About', '/about');
     ];
 
 // Render with options
-$menuBuilder->render(null,$options);
+$menuBuilder->render($options);
 
 ```
 
@@ -288,6 +291,6 @@ $options['menuClass'] = 'my-menu';
 $options['menuItemClass'] = 'my-menu-item';
 
 // Render the menu with the customized options
-$html = $menuBuilder->render(null, $options);
+$html = $menuBuilder->render($options);
 
 ```
