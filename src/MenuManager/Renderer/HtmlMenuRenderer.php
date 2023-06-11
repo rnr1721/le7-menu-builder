@@ -22,7 +22,7 @@ class HtmlMenuRenderer implements MenuRendererInterface
      * @var array
      */
     protected array $options = [
-        'menuId' => 'default',
+        'menuId' => 'menu-default',
         'menuClass' => 'navbar-nav',
         'menuItemClass' => 'nav-item',
         'menuAttributes' => [],

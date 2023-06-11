@@ -203,6 +203,20 @@ removing links from the menu, and retrieving the built menu array.</p>
 </dt>
 <dd>Render engine for the menu.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Core-MenuManager-MenuBuilder.html#property_urlReplace">$urlReplace</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Array with replace values for URLs</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Core-MenuManager-MenuBuilder.html#property_urlSearch">$urlSearch</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Array with search values for URLs</dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Core-MenuManager-MenuBuilder.html#method___construct">__construct()</a>
     <span>
@@ -329,6 +343,17 @@ if cache is available</dd>
                                 &nbsp;: self    </span>
 </dt>
 <dd>Set current menu ID</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Core-MenuManager-MenuBuilder.html#method_setUrlReplaceVars">setUrlReplaceVars()</a>
+    <span>
+                                &nbsp;: self    </span>
+</dt>
+<dd>Set arrays with values that will be replaced in URLs
+For example after this:
+setUrlReplaceVars(&#039;url&#039;,&#039;https://example.com&#039;),
+you will can add links with urls like this: {url}/about
+and in menu it will be normal links</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/Core-MenuManager-MenuBuilder.html#method_importSourceItem">importSourceItem()</a>
@@ -516,7 +541,7 @@ if cache is available</dd>
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$currentId</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;default&#039;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&#039;menu-default&#039;</span></code>
 
     
     
@@ -549,7 +574,7 @@ if cache is available</dd>
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$menu</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;default&#039; =&gt; []]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;menu-default&#039; =&gt; []]</span></code>
 
     
     
@@ -622,6 +647,72 @@ if cache is available</dd>
     
 
 </article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_urlReplace">
+        $urlReplace
+        <a href="classes/Core-MenuManager-MenuBuilder.html#property_urlReplace" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">96</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Array with replace values for URLs</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$urlReplace</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_urlSearch">
+        $urlSearch
+        <a href="classes/Core-MenuManager-MenuBuilder.html#property_urlSearch" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">89</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Array with search values for URLs</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$urlSearch</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -642,7 +733,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -695,7 +786,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -774,7 +865,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -886,7 +977,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -979,7 +1070,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">369</span>
 
     </aside>
 
@@ -1027,7 +1118,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">457</span>
+    <span class="phpdocumentor-element-found-in__line">484</span>
 
     </aside>
 
@@ -1087,7 +1178,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">507</span>
+    <span class="phpdocumentor-element-found-in__line">540</span>
 
     </aside>
 
@@ -1133,7 +1224,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -1193,7 +1284,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">527</span>
+    <span class="phpdocumentor-element-found-in__line">560</span>
 
     </aside>
 
@@ -1239,7 +1330,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">496</span>
+    <span class="phpdocumentor-element-found-in__line">529</span>
 
     </aside>
 
@@ -1287,7 +1378,7 @@ if cache is available</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">364</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -1295,7 +1386,7 @@ if cache is available</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">importSource</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$menu</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+                    <span class="phpdocumentor-signature__name">importSource</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$menu</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$searchUrl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$replaceUrl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1335,6 +1426,24 @@ The array should be structured as follows:
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>What menu for import from array? Null = all</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$searchUrl</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Optional array to search in URL</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$replaceUrl</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Optional array to replace in URL</p>
 </section>
 
             </dd>
@@ -1384,7 +1493,7 @@ The array should be structured as follows:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 
     </aside>
 
@@ -1429,7 +1538,7 @@ The array should be structured as follows:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
@@ -1487,7 +1596,7 @@ The array should be structured as follows:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">468</span>
+    <span class="phpdocumentor-element-found-in__line">501</span>
 
     </aside>
 
@@ -1495,27 +1604,26 @@ The array should be structured as follows:
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">render</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Interfaces-MenuRendererInterface.html"><abbr title="\Core\Interfaces\MenuRendererInterface">MenuRendererInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$renderer</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">render</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Interfaces-MenuRendererInterface.html"><abbr title="\Core\Interfaces\MenuRendererInterface">MenuRendererInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$renderer</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$renderer</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Interfaces-MenuRendererInterface.html"><abbr title="\Core\Interfaces\MenuRendererInterface">MenuRendererInterface</abbr></a>|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The menu renderer to use.
-If null, the default renderer will be used.</p>
-</section>
-
-            </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$options</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Additional options for rendering the menu.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$renderer</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Core-Interfaces-MenuRendererInterface.html"><abbr title="\Core\Interfaces\MenuRendererInterface">MenuRendererInterface</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The menu renderer to use. If null, the default renderer will be used.</p>
 </section>
 
             </dd>
@@ -1557,7 +1665,7 @@ If null, the default renderer will be used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">535</span>
+    <span class="phpdocumentor-element-found-in__line">568</span>
 
     </aside>
 
@@ -1603,7 +1711,7 @@ If null, the default renderer will be used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 
     </aside>
 
@@ -1649,7 +1757,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">589</span>
 
     </aside>
 
@@ -1674,6 +1782,19 @@ if cache is available</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">self</span>
@@ -1694,7 +1815,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">548</span>
 
     </aside>
 
@@ -1740,6 +1861,75 @@ if cache is available</p>
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setUrlReplaceVars">
+        setUrlReplaceVars()
+        <a href="classes/Core-MenuManager-MenuBuilder.html#method_setUrlReplaceVars" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">598</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set arrays with values that will be replaced in URLs
+For example after this:
+setUrlReplaceVars(&#039;url&#039;,&#039;https://example.com&#039;),
+you will can add links with urls like this: {url}/about
+and in menu it will be normal links</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setUrlReplaceVars</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$search</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$replace</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$search</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Items for search</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$replace</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">self</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -protected
                                                         "
 >
@@ -1750,7 +1940,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
@@ -1807,7 +1997,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 
     </aside>
 
@@ -1879,7 +2069,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">349</span>
 
     </aside>
 
@@ -1951,7 +2141,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">289</span>
 
     </aside>
 
@@ -2032,7 +2222,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
     </aside>
 
@@ -2088,7 +2278,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">311</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 
     </aside>
 
@@ -2142,7 +2332,7 @@ if cache is available</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/MenuManager/MenuBuilder.php"><a href="files/src-menumanager-menubuilder.html"><abbr title="src/MenuManager/MenuBuilder.php">MenuBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">437</span>
+    <span class="phpdocumentor-element-found-in__line">464</span>
 
     </aside>
 

@@ -36,7 +36,7 @@ class BootstrapMenuRendererTest extends TestCase
         $html = $menuBuilder->render();
 
         $expected = [
-            ' <nav id="default" class="navbar navbar-expand-lg navbar-light bg-light">',
+            ' <nav id="menu-default" class="navbar navbar-expand-lg navbar-light bg-light">',
             '      <div class="container">',
             '        <div class="collapse navbar-collapse">',
             '          <ul class="navbar-nav">',

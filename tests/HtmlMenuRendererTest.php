@@ -29,7 +29,7 @@ class HtmlMenuRendererTest extends TestCase
         $html = $menuBuilder->render();
 
         $expected = [
-            '<ul id="default" class="navbar-nav">',
+            '<ul id="menu-default" class="navbar-nav">',
             '        <li class="nav-item">',
             '          <a href="/solutions" class="nav-link">Solutions</a>',
             '        </li>',

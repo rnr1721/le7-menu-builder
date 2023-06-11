@@ -121,9 +121,16 @@ interface MenuBuilderInterface
      *      // ...
      *  ]
      * @param string|null $id What menu for import from array? Null = all
+     * @param array $searchUrl Optional array to search in URL
+     * @param array $replaceUrl Optional array to replace in URL
      * @return self
      */
-    public function importSource(array $menu, ?string $id = null): self;
+    public function importSource(
+            array $menu,
+            ?string $id = null,
+            array $searchUrl = [],
+            array $replaceUrl = []
+    ): self;
 
     /**
      * Exports the menu source as an array.
@@ -197,4 +204,17 @@ interface MenuBuilderInterface
      * @return self
      */
     public function setCacheTtl(int|null|DateInterval $ttl): self;
+
+    /**
+     * Set arrays with values that will be replaced in URLs
+     * For example after this:
+     * setUrlReplaceVars('url','https://example.com'),
+     * you will can add links with urls like this: {url}/about
+     * and in menu it will be normal links
+     * 
+     * @param string $search Items for search
+     * @param string $replace
+     * @return self
+     */
+    public function setUrlReplaceVars(string $search, string $replace): self;
 }

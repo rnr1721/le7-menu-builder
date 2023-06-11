@@ -63,7 +63,7 @@ class MenuBuilder implements MenuBuilderInterface
      * 
      * @var string
      */
-    private string $currentId = 'default';
+    private string $currentId = 'menu-default';
 
     /**
      * The menu array.
@@ -71,7 +71,7 @@ class MenuBuilder implements MenuBuilderInterface
      * @var array
      */
     private array $menu = [
-        'default' => []
+        'menu-default' => []
     ];
 
     /**
@@ -80,6 +80,20 @@ class MenuBuilder implements MenuBuilderInterface
      * @var array
      */
     private array $menuSource = [];
+
+    /**
+     * Array with search values for URLs
+     * 
+     * @var array<string>
+     */
+    private array $urlSearch = [];
+
+    /**
+     * Array with replace values for URLs
+     * 
+     * @var array<string>
+     */
+    private array $urlReplace = [];
 
     /**
      * MenuBuilder constructor.
@@ -109,7 +123,9 @@ class MenuBuilder implements MenuBuilderInterface
     ): self
     {
 
-        $link = new Link($url, $rels, $attributes, $label);
+        $urlFinal = str_replace($this->urlSearch, $this->urlReplace, $url);
+
+        $link = new Link($urlFinal, $rels, $attributes, $label);
 
         $this->addRawItem($key, $link, $parentKey, $weight);
 
@@ -361,8 +377,17 @@ class MenuBuilder implements MenuBuilderInterface
      * @inheritdoc
      * @throws InvalidArgumentException If any of the keys are not strings, or if incorrect types are provided for the parentKey, attributes, or rels.
      */
-    public function importSource(array $menu, ?string $id = null): self
+    public function importSource(
+            array $menu,
+            ?string $id = null,
+            array $searchUrl = [],
+            array $replaceUrl = []
+    ): self
     {
+        if (!empty($searchUrl) && !empty($replaceUrl)) {
+            $this->urlSearch = $searchUrl;
+            $this->urlReplace = $replaceUrl;
+        }
         if ($id) {
             if (!array_key_exists($id, $menu)) {
                 throw new InvalidArgumentException("Menu ID not found while import: " . $id);
@@ -385,7 +410,9 @@ class MenuBuilder implements MenuBuilderInterface
      * @return void
      * @throws InvalidArgumentException
      */
-    protected function importSourceItem(array $menu): void
+    protected function importSourceItem(
+            array $menu
+    ): void
     {
         foreach ($menu as $item) {
             $key = $item['key'];
@@ -456,10 +483,16 @@ class MenuBuilder implements MenuBuilderInterface
      */
     public function exportSource(?string $id = null): array|null
     {
-        if ($id) {
-            return $this->menuSource[$id] ?? null;
+        $menu = $this->menuSource;
+        foreach ($menu as &$currentMenu) {
+            foreach ($currentMenu as $menuItem) {
+                $menuItem['url'] = str_replace($this->urlReplace, $this->urlSearch, $menuItem['url']);
+            }
         }
-        return $this->menuSource;
+        if ($id) {
+            return $menu[$id] ?? null;
+        }
+        return $menu;
     }
 
     /**
@@ -535,10 +568,12 @@ class MenuBuilder implements MenuBuilderInterface
     public function reset(): self
     {
         $this->menu = [
-            'default' => []
+            'menu-default' => []
         ];
-        $this->currentId = 'default';
+        $this->currentId = 'menu-default';
         $this->menuSource = [];
+        $this->urlSearch = [];
+        $this->urlReplace = [];
         return $this;
     }
 
@@ -548,9 +583,22 @@ class MenuBuilder implements MenuBuilderInterface
         return $this;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function setCacheTtl(int|null|DateInterval $ttl): self
     {
         $this->cacheTtl = $ttl;
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setUrlReplaceVars(string $search, string $replace): self
+    {
+        $this->urlSearch[] = '{' . $search . '}';
+        $this->urlReplace[] = $replace;
         return $this;
     }
 }

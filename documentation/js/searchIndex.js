@@ -91,6 +91,11 @@ Search.appendIndex(
             "summary": "Set\u0020Ttl\u0020for\u0020cache",
             "url": "classes/Core-Interfaces-MenuBuilderInterface.html#method_setCacheTtl"
         },                {
+            "fqsen": "\\Core\\Interfaces\\MenuBuilderInterface\u003A\u003AsetUrlReplaceVars\u0028\u0029",
+            "name": "setUrlReplaceVars",
+            "summary": "Set\u0020arrays\u0020with\u0020values\u0020that\u0020will\u0020be\u0020replaced\u0020in\u0020URLs\nFor\u0020example\u0020after\u0020this\u003A\nsetUrlReplaceVars\u0028\u0027url\u0027,\u0027https\u003A\/\/example.com\u0027\u0029,\nyou\u0020will\u0020can\u0020add\u0020links\u0020with\u0020urls\u0020like\u0020this\u003A\u0020\u007Burl\u007D\/about\nand\u0020in\u0020menu\u0020it\u0020will\u0020be\u0020normal\u0020links",
+            "url": "classes/Core-Interfaces-MenuBuilderInterface.html#method_setUrlReplaceVars"
+        },                {
             "fqsen": "\\Core\\Interfaces\\MenuRendererInterface",
             "name": "MenuRendererInterface",
             "summary": "Interface\u0020MenuRendererInterface",
@@ -236,6 +241,11 @@ Search.appendIndex(
             "summary": "Set\u0020Ttl\u0020for\u0020cache",
             "url": "classes/Core-MenuManager-MenuBuilder.html#method_setCacheTtl"
         },                {
+            "fqsen": "\\Core\\MenuManager\\MenuBuilder\u003A\u003AsetUrlReplaceVars\u0028\u0029",
+            "name": "setUrlReplaceVars",
+            "summary": "Set\u0020arrays\u0020with\u0020values\u0020that\u0020will\u0020be\u0020replaced\u0020in\u0020URLs\nFor\u0020example\u0020after\u0020this\u003A\nsetUrlReplaceVars\u0028\u0027url\u0027,\u0027https\u003A\/\/example.com\u0027\u0029,\nyou\u0020will\u0020can\u0020add\u0020links\u0020with\u0020urls\u0020like\u0020this\u003A\u0020\u007Burl\u007D\/about\nand\u0020in\u0020menu\u0020it\u0020will\u0020be\u0020normal\u0020links",
+            "url": "classes/Core-MenuManager-MenuBuilder.html#method_setUrlReplaceVars"
+        },                {
             "fqsen": "\\Core\\MenuManager\\MenuBuilder\u003A\u003A\u0024renderer",
             "name": "renderer",
             "summary": "Render\u0020engine\u0020for\u0020the\u0020menu.",
@@ -270,6 +280,16 @@ Search.appendIndex(
             "name": "menuSource",
             "summary": "The\u0020menu\u0020source\u0020array.",
             "url": "classes/Core-MenuManager-MenuBuilder.html#property_menuSource"
+        },                {
+            "fqsen": "\\Core\\MenuManager\\MenuBuilder\u003A\u003A\u0024urlSearch",
+            "name": "urlSearch",
+            "summary": "Array\u0020with\u0020search\u0020values\u0020for\u0020URLs",
+            "url": "classes/Core-MenuManager-MenuBuilder.html#property_urlSearch"
+        },                {
+            "fqsen": "\\Core\\MenuManager\\MenuBuilder\u003A\u003A\u0024urlReplace",
+            "name": "urlReplace",
+            "summary": "Array\u0020with\u0020replace\u0020values\u0020for\u0020URLs",
+            "url": "classes/Core-MenuManager-MenuBuilder.html#property_urlReplace"
         },                {
             "fqsen": "\\Core\\MenuManager\\Renderer\\ArrayMenuRenderer",
             "name": "ArrayMenuRenderer",

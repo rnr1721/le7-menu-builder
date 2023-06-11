@@ -11,7 +11,7 @@ class BootstrapMenuRenderer extends HtmlMenuRenderer
      * @var array
      */
     protected array $options = [
-        'menuId' => 'default',
+        'menuId' => 'menu-default',
         'navClass' => 'navbar navbar-expand-lg navbar-light bg-light',
         'containerClass' => 'container',
         'wrapperClass' => 'collapse navbar-collapse',

@@ -15,6 +15,7 @@ Key Features:
 - Customize menu rendering by providing your own rendering engine or using the default one.
 - Support for caching to improve performance when rendering menus.
 - Easily import and export menu items from an external data source.
+- Add 'variables' to links URLs that will be replaced with some text (templates)
 
 The Menu Manager class is designed to be simple to use and extend.
 It uses an array-based data structure to represent menus and provides
@@ -105,6 +106,28 @@ $menuBuilder->setActiveMenu('default');
 $menuBuilder->render();
 
 ```
+
+## 'Variables' in links (Templated links)
+
+In some cases, you may need to store variables in links, not full URL
+
+```php
+use Core\Links\Link;
+use Core\MenuManager\MenuBuilder;
+use Core\MenuManager\Renderers\BootstrapMenuRenderer;
+
+// Create MenuBuilder instance
+$menuBuilder = new MenuBuilder(new BootstrapMenuRenderer());
+
+$menuBuilder->setUrlReplaceVars('url','https://example.com');
+
+// Add item to menu
+$menuBuilder->addItem('about', 'About', '{url}/about');
+
+```
+
+Now, if you export your menu, {url} will be replaced to https://example.com
+IMPORTANT: it will not work with raw links added by addRawItem method
 
 ## Raw links
 
@@ -250,6 +273,49 @@ interface MenuRendererInterface
 You can customize the rendering of the menu by providing your own rendering
 engine or modifying the default one. Additionally, caching can be enabled to
 improve performance when rendering menus.
+
+## Import and export menu items configuration
+
+You can import and export menu items configuration.
+
+Example:
+
+```php
+use Core\MenuManager\MenuBuilder;
+use Core\MenuManager\Renderers\HtmlMenuRenderer;
+
+// Create MenuBuilder instance
+$menuBuilder = new MenuBuilder(new HtmlMenuRenderer());
+
+$items = [
+    'admin' => [
+        [
+            'key' => 'home',
+            'label' => 'Home',
+            'url' => 'http://example.com',
+            'parentKey' => null,
+            'rels' => [],
+            'attributes' => [],
+            'weight' => 50
+        ],
+        [
+            'key' => 'about',
+            'label' => 'About',
+            'url' => 'http://example.com/about',
+            'parentKey' => null,
+            'rels' => [],
+            'attributes' => [],
+            'weight' => 50
+        ]
+    ]
+];
+
+// Import menu items configuration from array
+$menuBuilder->importSource($items);
+
+// Export menu items configuration to array
+$menuBuilder->exportSource();
+```
 
 ## Another example of usage
 
